@@ -1,8 +1,19 @@
 class PreparationPolicy < ApplicationPolicy
   class Scope < Scope
-    # NOTE: Be explicit about which records you allow access to!
-    # def resolve
-    #   scope.all
-    # end
+    def resolve
+      scope.all
+    end
+  end
+
+  def new?
+    @recipe.user = current_user
+  end
+
+  def create?
+    @recipe.user = current_user
+  end
+
+  def destroy?
+    @recipe.user = current_user
   end
 end
