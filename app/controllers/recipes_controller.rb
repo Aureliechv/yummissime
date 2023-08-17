@@ -9,6 +9,7 @@ class RecipesController < ApplicationController
     @recipe.user = current_user
     @recipe.save!
     authorize @recipe
+    redirect_to new_recipe_preparation_path(@recipe)
   end
 
   def show

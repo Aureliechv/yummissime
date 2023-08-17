@@ -1,0 +1,12 @@
+<h1 class="page-title">Nouvelle recette.</h1>
+<%= simple_form_for @recipe do |f| %>
+  <%= f.input :name, label: "Nom de la recette :"%>
+  <div class="form-inline-container">
+      <%= f.input :diet, collection: Recipe::DIET, label: "Régime alimentaire :" %>
+  <%= f.input :difficulty, collection: Recipe::DIFFICULTY, label: "Difficulté :" %>
+  </div>
+  <%= f.input :preparation_time, label: "Temps de préparation :" %>
+  <%= f.input :cooking_time, label: "Temps de cuisson :" %>
+  <%= f.input :number_of_people, label: "Nombre de personne :" %>
+  <%= f.button :submit, "Étape suivante"%>
+<% end %>
